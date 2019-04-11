@@ -4,7 +4,7 @@ Este projeto foi construído como parte do processo seletivo para a organizaçã
 
 ## Instalação
 
-Para abrir este teste não é necessário instalação prévia. Realize o clone do repositório e abra o arquivo index.html a partir do browser
+Para inicializar este projeto não é necessário instalação prévia. Realize o clone do repositório e abra o arquivo index.html em seu browser
 
 ## Componentes utilizados
 
