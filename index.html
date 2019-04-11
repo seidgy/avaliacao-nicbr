@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Avaliação NIC.br</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/lodash.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            populateHistory();
+        });
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="topo">
+            <a href="https://github.com/seidgy/avaliacao-nicbr" target="_blank" class="logo"><img src="images/logo-nicbr.png" /></a>
+            <h1>Medidor de Velocidade de Internet</h1>
+        </div>
+        <div class="user">
+            <h2 class="name">
+                Bem-vindo, <span id="name-span">Anônimo</span>
+                <label for="checkEdit" class="editButton"><img src="images/pencil.png" alt="Acione para alterar o nome"></label><input type="checkbox" id="checkEdit"/>
+                <div class="div-edit">
+                    Nome: <input type="text" id="input-edit" />
+                    <div class="buttons">
+                            <label for="checkEdit" class="button primary" onClick="javascript:updateName();" id="save-button">Salvar</label>
+                            <label for="checkEdit" class="secondary">Cancelar</label>
+                    </div>
+                </div>
+            </h2>
+            <a class="button primary" href="javascript:getMeasurement();" id="mainButton">Medir</a>
+        </div>
+        <div class="measurement">
+            <div class="column1">
+                <div id="speedometer" class="wrapper">
+                    <div class="arc arc_start">
+                        <div class="speedometer"></div>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="arc arc_end"></div>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="values">
+                    <div class="download">
+                        <p>Download</p>
+                        <h2 class="downNum">
+                            <span class="num">00</span>
+                            <span class="decimal">.00</span>
+                            <span class="unity">mpbs</span>
+                        </h2>
+                    </div>
+                    <div class="latency">
+                        <p>Latência</p>
+                        <h2 class="latNum">
+                            <span class="num">000</span>
+                            <span class="decimal">.00</span>
+                            <span class="unity">ms</span>
+                        </h2>
+                    </div>
+                    <div class="upload">
+                        <p>Upload</p>
+                        <h2 class="upNum">
+                            <span class="num">00</span>
+                            <span class="decimal">.00</span>
+                            <span class="unity">mpbs</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="checkHistory"/>
+        <label for="checkHistory" class="historyLabel">Histórico</label>
+        <div class="history">
+            <div class="row title">
+                <div>Data</div>
+                <div>Latência</div>
+                <div>Download</div>
+                <div>Upload</div>
+            </div>
+            <div class="row full">
+                <div>
+                    Nenhum registro no histórico.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        updateName();
+    </script>
+</body>
